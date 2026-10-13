@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b5d4b">
+<title>أُسوَة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@500;700&family=Scheherazade+New:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ea;--card:#fffdf8;--ink:#14231f;--sub:#62716c;--acc:#0b5d4b;--on:#fff;--gold:#a8741a;--line:#e2ddd0;--hero:#0b5d4b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1714;--card:#16231f;--ink:#e9efe9;--sub:#92a8a1;--acc:#5fcfb0;--on:#06251d;--gold:#e3b862;--line:#26382f;--hero:#12392f}}
+:root[data-theme="dark"]{--bg:#0d1714;--card:#16231f;--ink:#e9efe9;--sub:#92a8a1;--acc:#5fcfb0;--on:#06251d;--gold:#e3b862;--line:#26382f;--hero:#12392f}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,sans-serif;line-height:1.7}
+.hero{background:var(--hero);color:#f3efe3;padding:26px 18px 18px;border-radius:0 0 28px 28px}
+.hero h1{font-family:Amiri,'Traditional Arabic',serif;font-size:30px;margin:0 auto;max-width:640px}
+.hero p{margin:2px auto 14px;max-width:640px;opacity:.8;font-size:14px}
+.w{max-width:640px;margin:auto}
+input{width:100%;padding:12px 14px;border:0;border-radius:14px;background:rgba(255,255,255,.14);color:#fff;font:inherit}
+input::placeholder{color:#d5e3dd}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:14px 16px 4px;max-width:640px;margin:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;white-space:nowrap}
+button.on{background:var(--acc);color:var(--on);border-color:var(--acc)}
+main{max-width:640px;margin:auto;padding:4px 16px 28px}
+article{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0}
+.tag{font-size:13px;color:var(--gold);font-weight:700}
+.t{font-family:Amiri,'Traditional Arabic',serif;font-size:22px;line-height:2.1;margin:6px 0 10px}
+.m{font-size:13.5px;color:var(--sub)}
+.row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.v{background:var(--acc);color:var(--on);border-color:var(--acc);font-weight:500}
+#bk{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:9}
+#bk.s{display:flex}
+#sh{background:var(--card);width:100%;max-width:640px;border-radius:24px 24px 0 0;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px))}
+#sh h2{margin:0 0 8px;font-size:18px;color:var(--acc)}
+#sh dl{margin:0}#sh dt{font-size:13px;color:var(--sub);margin-top:10px}#sh dd{margin:0;font-weight:500}
+a{color:var(--acc)}
+@keyframes up{from{opacity:0;transform:perspective(700px) rotateX(-14deg) translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fl{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes pop{50%{transform:scale(1.12)}}
+@keyframes sl{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.hero{background:linear-gradient(120deg,var(--hero),#127a63,var(--hero));background-size:220% 220%;animation:fl 14s ease infinite}
+article{opacity:0;transform:perspective(700px) rotateX(-12deg) translateY(26px) scale(.98);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);will-change:transform,opacity}
+article.in{opacity:1;transform:none}
+article button.on{animation:pop .35s}
+button{transition:transform .15s,background .2s}button:active{transform:scale(.94)}
+#bk.s{animation:fi .2s}#bk.s #sh{animation:sl .32s cubic-bezier(.2,.8,.2,1)}
+#tt{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));left:50%;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:9px 18px;border-radius:999px;opacity:0;transition:.3s;pointer-events:none;z-index:20}
+#tt.s{opacity:1;transform:translate(-50%,0)}
+.t{font-size:var(--fs,22px)}
+#fab{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;z-index:5}
+#fab button{box-shadow:0 6px 16px rgba(0,0,0,.2);width:48px;height:48px;padding:0;border-radius:50%;font-weight:700}
+.cw{display:flex;justify-content:center;padding:22px 0;perspective:600px}
+#cb{width:170px;height:170px;border-radius:50%;font-size:54px;font-weight:700;color:var(--on);border:0;background:radial-gradient(circle at 35% 28%,#47b79c,var(--acc) 64%);box-shadow:0 14px 0 rgba(0,0,0,.28),0 22px 30px rgba(0,0,0,.3);transform:translateY(-8px) rotateX(12deg);transition:transform .08s,box-shadow .08s}
+#cb:active{transform:translateY(4px) rotateX(12deg);box-shadow:0 3px 0 rgba(0,0,0,.28),0 6px 12px rgba(0,0,0,.3)}
+:root{--g1:#f3dc8c;--g2:#d9a93a;--g3:#a8741a}
+html{scroll-behavior:smooth}
+@keyframes gs{to{background-position:200% 0}}
+@keyframes dr{to{background-position:64px 64px}}
+@keyframes pop2{from{opacity:0;transform:scale(.3) translateY(20px)}to{opacity:1;transform:none}}
+@keyframes up2{from{opacity:0;transform:translateY(14px) scale(.92)}to{opacity:1;transform:none}}
+button{transition:transform .25s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s,border-color .3s}
+.hero{position:relative;overflow:hidden}
+.hero>*{position:relative;z-index:1}
+.hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 5l6 15 15-6-6 15 15 6-15 6 6 15-15-6-6 15-6-15-15 6 6-15-15-6 15-6-6-15 15 6z' fill='none' stroke='%23e9c46a' stroke-width='1.3'/%3E%3C/svg%3E");background-size:64px 64px;opacity:.11;animation:dr 60s linear infinite}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--g2),var(--g1),var(--g2),transparent)}
+.hero h1{background:linear-gradient(90deg,var(--g1),var(--g2),#fff3c4,var(--g2),var(--g1));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:gs 7s linear infinite}
+.pill{display:inline-block;margin:0 0 12px;padding:3px 14px;border:1px solid var(--g2);border-radius:999px;color:var(--g1);font-size:13px;background:rgba(0,0,0,.15)}
+article{box-shadow:0 8px 24px -12px rgba(0,0,0,.2)}
+article::before{content:"";display:block;width:38px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--g1),var(--g3));margin-bottom:10px}
+.tag.j{display:inline-block;background:linear-gradient(135deg,var(--g1),var(--g2));color:#3d2a00;padding:1px 12px;border-radius:999px;box-shadow:0 2px 8px -2px rgba(168,116,26,.5)}
+.chips button.on{box-shadow:0 0 0 2px var(--g2)}
+#sh::before{content:"";display:block;width:44px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--g1),var(--g3));margin:-8px auto 14px}
+#fab button{animation:pop2 .7s cubic-bezier(.34,1.56,.64,1) both}
+#fs{border:2px solid var(--gold);color:var(--gold)}
+#tb{border:3px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(var(--g2) calc(var(--p,0)*1%),var(--line) 0) border-box;font-size:17px}
+#tb.act{color:var(--gold)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 8px;padding:14px 0}
+.sg{display:flex;flex-direction:column;align-items:center;gap:7px;text-decoration:none;color:var(--ink);font-size:12.5px;border:0;background:none;padding:0;border-radius:0;animation:up2 .45s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k,0)*45ms)}
+.sg i{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;font-size:25px;font-style:normal;color:#fff;box-shadow:0 8px 16px -8px rgba(0,0,0,.4);transition:transform .2s}
+.sg:active i{transform:scale(.9)}
+body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23d9a93a' stroke-opacity='.16'%3E%3Cpath d='M40 6l8 18 18-8-8 18 18 8-18 8 8 18-18-8-8 18-8-18-18 8 8-18-18-8 18-8-8-18 18 8z'/%3E%3Crect x='28' y='28' width='24' height='24' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");background-attachment:fixed}
+.bsm{font-family:Amiri,serif;color:var(--g1);font-size:20px;text-align:center;margin-bottom:4px}
+.hero h1{font-family:'Aref Ruqaa',Amiri,serif;font-size:38px;text-align:center;line-height:1.5}
+.hero p,.hero .w{text-align:center}
+.pill,.tag,.dl{font-family:'Reem Kufi',Tajawal,sans-serif}
+article{border:1px solid color-mix(in srgb,var(--g2) 45%,var(--line));background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Cpath d='M33 1V22Q33 33 22 33H1' fill='none' stroke='%23d9a93a' stroke-opacity='.7' stroke-width='1.6'/%3E%3Cpath d='M27 7V20Q27 27 20 27H7' fill='none' stroke='%23d9a93a' stroke-opacity='.45'/%3E%3Ccircle cx='30.5' cy='30.5' r='2.2' fill='%23d9a93a' fill-opacity='.8'/%3E%3C/svg%3E") no-repeat right 10px bottom 10px/32px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Cpath d='M1 33V12Q1 1 12 1h21' fill='none' stroke='%23d9a93a' stroke-opacity='.7' stroke-width='1.6'/%3E%3Cpath d='M7 27V14Q7 7 14 7h13' fill='none' stroke='%23d9a93a' stroke-opacity='.45'/%3E%3Ccircle cx='3.5' cy='3.5' r='2.2' fill='%23d9a93a' fill-opacity='.8'/%3E%3C/svg%3E") no-repeat left 10px top 10px/32px,var(--card)}
+.t::after{content:" ✦";color:var(--g2);font-size:.55em}
+.orn{text-align:center;color:var(--g2);letter-spacing:12px;margin:8px 0 0}
+.ft{text-align:center;padding-bottom:96px}
+#dy{padding:0 16px}
+.dy{max-width:640px;margin:16px auto 0;padding:16px 18px;border-radius:22px;background:linear-gradient(135deg,var(--hero),#127a63);color:#f3efe3;border:1px solid var(--g2);box-shadow:0 12px 30px -14px rgba(0,0,0,.5);animation:up2 .7s cubic-bezier(.2,.8,.2,1) both}
+.dl{color:var(--g1);margin-bottom:2px}
+.dt{font-family:Amiri,serif;font-size:21px;line-height:2;margin:2px 0 6px}
+.dy .m{color:#d6e3dc}
+.sg i{width:60px;height:60px;border-radius:50%;padding:2.5px;background:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));box-shadow:0 8px 18px -8px rgba(168,116,26,.8);display:block}
+.sg i svg{width:100%;height:100%;display:block;border-radius:50%}
+.t,.dt{font-family:'Scheherazade New',Amiri,'Traditional Arabic',serif}
+.t{font-size:var(--fs,26px);font-weight:500;line-height:2.15}
+.dt{font-size:25px;font-weight:500}
+article{padding:22px 26px 38px;background-size:24px 24px,24px 24px,auto;background-position:right 8px bottom 8px,left 8px top 8px,0 0}
+.row{margin-top:18px;gap:10px}
+article.in{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+article.tl{transition:transform .18s ease-out!important}
+.hero{perspective:700px}
+.hero::after{height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='12'%3E%3Cpath d='M13 1.5l1.8 3.4 3.7.7-3.7.8L13 10.5l-1.8-3.4-3.7-.8 3.7-.7z' fill='%23e9c46a'/%3E%3Cpath d='M0 6h6M20 6h6' stroke='%23d9a93a' stroke-width='.8'/%3E%3C/svg%3E") repeat-x center/26px 12px}
+.mh{position:absolute;top:8px;left:50%;width:250px;height:132px;margin-left:-125px;opacity:.55;z-index:0}
+.kh{display:block;width:30px;height:30px;margin:0 auto 2px;animation:sp 8s linear infinite;filter:drop-shadow(0 0 6px rgba(233,196,106,.7))}
+.ln{position:absolute;top:0;width:30px;height:70px;transform-origin:50% 0;animation:sw 5s ease-in-out infinite alternate;z-index:1}
+.l1{left:12px}.l2{right:12px;animation-delay:-2.5s}
+.ln svg{width:100%;height:100%}
+.glow{animation:fk 2.4s ease-in-out infinite}
+@keyframes sp{to{transform:rotateY(360deg)}}
+@keyframes sw{from{transform:rotate(7deg)}to{transform:rotate(-7deg)}}
+@keyframes fk{50%{opacity:.5}}
+@keyframes sh{to{background-position:-220% 0}}
+@keyframes bx{0%{opacity:1;transform:rotate(calc(var(--n)*45deg)) translateY(0)}100%{opacity:0;transform:rotate(calc(var(--n)*45deg)) translateY(-95px)}}
+.chips button{border-color:color-mix(in srgb,var(--g2) 55%,var(--line))}
+.tag.j{background:linear-gradient(110deg,var(--g1) 30%,#fff3c4 46%,var(--g2) 62%,var(--g1));background-size:220% 100%;animation:sh 4.5s linear infinite}
+#sp{position:fixed;top:0;right:0;height:3px;width:0;background:linear-gradient(270deg,var(--g1),var(--g2));z-index:30}
+#ms{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:40;opacity:0;transition:opacity .35s}
+#ms.s{opacity:1}
+.msb{position:relative;text-align:center;padding:26px 48px 22px;border-radius:30px;background:rgba(10,24,20,.86);backdrop-filter:blur(8px);border:1.5px solid var(--g2);box-shadow:0 0 0 6px rgba(217,169,58,.14),0 30px 60px -20px rgba(0,0,0,.7),0 0 50px rgba(233,196,106,.35);transform:perspective(700px) rotateX(22deg) scale(.7);transition:transform .7s cubic-bezier(.34,1.56,.64,1)}
+#ms.s .msb{transform:perspective(700px) rotateX(0) scale(1)}
+.mst{font-family:'Aref Ruqaa',Amiri,serif;font-size:46px;line-height:1.4;background:linear-gradient(90deg,var(--g1),#fff3c4,var(--g2),var(--g1));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:gs 2.5s linear infinite}
+.mss{font-family:Amiri,serif;font-size:22px;color:var(--g1)}
+.msb i{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3px;border-radius:50%;background:var(--g1);box-shadow:0 0 8px var(--g2);opacity:0}
+#ms.s .msb i{animation:bx 1.3s ease-out forwards;animation-delay:calc(var(--n)*40ms)}
+.t{font-family:Amiri,'Traditional Arabic',serif;font-size:var(--fs,22px);font-weight:400;line-height:2.1}
+.dt{font-family:Amiri,serif;font-size:21px;font-weight:400}
+.tag,.tag.j{display:inline-block;font-family:'Scheherazade New',Amiri,serif;font-size:18px;font-weight:700;line-height:1.7;color:#3d2a00;padding:2px 18px;border-radius:999px;background:linear-gradient(110deg,var(--g1) 30%,#fff3c4 46%,var(--g2) 62%,var(--g1));background-size:220% 100%;animation:sh 4.5s linear infinite;box-shadow:0 2px 10px -3px rgba(168,116,26,.55)}
+.tag.j{box-shadow:0 0 0 1.5px var(--g3),0 4px 14px -3px rgba(217,169,58,.7)}
+.pill,.dl{font-family:'Scheherazade New',Amiri,serif;font-size:16px;font-weight:600}
+.hero::after{height:3px;background:linear-gradient(90deg,transparent,var(--g2),var(--g1),var(--g2),transparent)}
+.chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);padding-bottom:8px}
+.chips small{opacity:.7;font-size:11px;margin-inline-start:2px}
+#fab{align-items:center}
+#fab:not(.o) button:not(#fm){display:none}
+#fm{width:54px;height:54px;border:0;background:linear-gradient(135deg,var(--g1),var(--g3));color:#3d2a00;font-size:24px;animation:none!important;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+#fab.o #fm{transform:none;box-shadow:0 0 0 4px rgba(233,196,106,.25),0 0 18px rgba(233,196,106,.6)}
+.tag,.tag.j{font-family:'Aref Ruqaa',Amiri,serif;font-size:15px;font-weight:700;line-height:1.8;padding:1px 14px}
+.pill,.dl{font-family:'Reem Kufi',Tajawal,sans-serif;font-size:13px;font-weight:400}
+.hero .w{display:flex;justify-content:center;gap:8px}
+.pill{white-space:nowrap;margin:0 0 12px}
+#sh{max-height:86vh;overflow:auto}
+#gl{padding:0 16px}
+.gl{max-width:640px;margin:12px auto 0;padding:14px 18px;border-radius:20px;background:var(--card);border:1px solid color-mix(in srgb,var(--g2) 45%,var(--line))}
+.gh{display:flex;justify-content:space-between;align-items:center;font-family:'Aref Ruqaa',Amiri,serif;font-size:19px;color:var(--gold)}
+.gbar{height:10px;border-radius:10px;background:var(--line);margin:10px 0 6px;overflow:hidden}
+.gbar i{display:block;height:100%;border-radius:10px;background:linear-gradient(90deg,var(--g3),var(--g2),var(--g1));transition:width .8s cubic-bezier(.2,.8,.2,1)}
+#fab button{display:grid;place-items:center;padding:0;line-height:1;width:50px;height:50px;font-size:16px}
+#fab button svg{display:block;width:24px;height:24px}
+#fab #fm{width:56px;height:56px}
+#fab #fm svg{width:26px;height:26px}
+#up{color:var(--gold)}
+.sep{display:flex;align-items:center;gap:12px;margin:28px 4px 6px;font-family:'Aref Ruqaa',Amiri,serif;font-size:21px;color:var(--gold)}
+.sep::before,.sep::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--g2),transparent)}
+.sep span::before,.sep span::after{content:" ✦ ";font-size:.6em;color:var(--g2)}
+article{position:relative;overflow:hidden}
+article::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,transparent 40%,rgba(233,196,106,.2) 50%,transparent 60%);transform:translateX(120%);pointer-events:none}
+article.in::after{animation:sw2 1.5s ease .35s 1 forwards}
+@keyframes sw2{to{transform:translateX(-120%)}}
+#tt{border:1px solid var(--g2)}
+.sep{gap:10px}
+.sep i{width:14px;height:14px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e9c46a' d='M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6z'/%3E%3C/svg%3E") center/contain no-repeat}
+.sep span::before,.sep span::after{content:none}
+.tag,.tag.j{display:inline-flex;align-items:center;gap:7px}
+.tag .st{width:12px;height:12px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233d2a00' d='M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6z'/%3E%3C/svg%3E") center/contain no-repeat}
+.t::after{content:"";display:inline-block;width:.5em;height:.5em;margin-inline-start:.45em;vertical-align:middle;font-size:inherit;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d9a93a' d='M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6z'/%3E%3C/svg%3E") center/contain no-repeat}
+#fab{pointer-events:none}
+#fab button{pointer-events:auto}
+#fab button:not(#fm){animation:none}
+#fab button:nth-last-child(2){--k:1}#fab button:nth-last-child(3){--k:2}#fab button:nth-last-child(4){--k:3}#fab button:nth-last-child(5){--k:4}
+#fab:not(.o) button:not(#fm){display:grid;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(26px) scale(.4);transition:transform .3s ease calc((5 - var(--k))*.03s),opacity .25s ease calc((5 - var(--k))*.03s),visibility 0s linear .4s}
+#fab.o button:not(#fm){opacity:1;visibility:visible;transform:none;transition:transform .5s cubic-bezier(.34,1.56,.64,1) calc(var(--k)*.05s),opacity .3s ease calc(var(--k)*.05s),visibility 0s}
+#fab.o button:not(#fm):active{transform:scale(.92)}
+#fab #fm{position:relative}
+#fab #fm::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--g1);opacity:0;pointer-events:none}
+#fab.o #fm::before{animation:rp .7s ease-out}
+#fab:not(.o) #fm{animation:br 3.2s ease-in-out infinite!important}
+#fab #fm svg{animation:ipop .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes rp{from{opacity:.9;transform:scale(.85)}to{opacity:0;transform:scale(1.7)}}
+@keyframes br{0%,100%{box-shadow:0 0 0 0 rgba(233,196,106,.5)}50%{box-shadow:0 0 0 10px rgba(233,196,106,0)}}
+@keyframes ipop{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+#sh{transition:transform .22s ease}
+#bk.c{animation:fo .26s ease forwards}
+#bk.c #sh{animation:sd .28s cubic-bezier(.4,0,1,1) forwards}
+@keyframes fo{to{opacity:0}}
+@keyframes sd{to{transform:translateY(105%)}}
+.ay{font-family:Amiri,serif;color:var(--g1);font-size:17px;text-align:center;margin:-4px 0 8px;opacity:.95}
+article{will-change:auto}
+article.in{transform:none}
+article.tl{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+body{background-attachment:scroll}
+.chips{backdrop-filter:none;background:var(--bg)}
+.hero{animation:none}
+.hero::before{animation:none}
+.tag,.tag.j{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--g1),var(--g2));animation:none}
+.tag::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.6) 50%,transparent 65%);transform:translateX(-130%);animation:ts 4.5s linear infinite}
+@keyframes ts{to{transform:translateX(130%)}}
+#ls.nw article::after{display:none}
+body.kb #fab{opacity:0;visibility:hidden;transform:translateY(24px);transition:opacity .2s,transform .2s,visibility 0s .2s}
+.hd{display:none!important}
+.hero{animation:fl 14s ease infinite}
+.hero::before{animation:dr 60s linear infinite}
+.chips{backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 88%,transparent)}
+body.kb .chips{backdrop-filter:none}
+body.kb *,body.kb *::before,body.kb *::after{animation-play-state:paused!important}
+article{content-visibility:auto;contain-intrinsic-size:auto 300px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+body.kb #fab{transition:none!important;opacity:0!important;visibility:hidden!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}article{opacity:1!important;transform:none!important}}
+.note{font-size:13px;color:var(--sub);padding:0 16px 24px;max-width:640px;margin:auto}
+
+#wl{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:24px;background:rgba(6,20,17,.93)}
+#wl.s{display:grid;animation:fi .5s ease both}
+#wl.c{animation:fo .35s ease forwards}
+.wlc{max-width:420px;width:100%;text-align:center;padding:32px 24px 26px;border-radius:28px;border:1.5px solid var(--g2);background:linear-gradient(160deg,#0f4a3d,#0a2e27);color:#f3efe3;box-shadow:0 0 0 6px rgba(217,169,58,.12),0 30px 70px -20px rgba(0,0,0,.8);animation:up2 .8s cubic-bezier(.2,.8,.2,1) both}
+.wlb{font-family:Amiri,serif;color:var(--g1);font-size:22px;margin-bottom:12px}
+.wlt{font-family:'Aref Ruqaa',Amiri,serif;font-size:25px;line-height:2.1;margin:6px 0 22px}
+#wlb{background:linear-gradient(135deg,var(--g1),var(--g2));color:#3d2a00;border:0;font-weight:700;font-size:18px;padding:10px 42px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(217,169,58,.7)}
+.ft a{color:var(--gold);text-decoration:none;border-bottom:1px dotted var(--g2)}
+
+body.kb #fab{transform:none!important}
+body.kbf #fab{animation:fabIn .3s ease both}
+@keyframes fabIn{from{opacity:0}to{opacity:1}}
+html.lock,html.lock body{overflow:hidden}
+#sh{overscroll-behavior:contain}
+#bk{overscroll-behavior:contain}
+#bk,#ms,#wl{top:0;right:0;bottom:0;left:0}
+article::after,.hero::before{top:0;right:0;bottom:0;left:0}
+#fab #fm::before{top:-4px;right:-4px;bottom:-4px;left:-4px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{-webkit-tap-highlight-color:transparent}
+button,a,input{touch-action:manipulation}
+.chips{-webkit-backdrop-filter:blur(10px)}
+body.kb .chips{-webkit-backdrop-filter:none}
+body{font-family:Tajawal,'Noto Sans Arabic','Droid Arabic Kufi',Tahoma,sans-serif}
+.t,.dt{font-family:Amiri,'Noto Naskh Arabic','Droid Arabic Naskh','Traditional Arabic',serif}
+.lite .tag::after,.lite article::after,.lite .hero::before,.lite .hero,.lite .hero h1,.lite #fab:not(.o) #fm{animation:none!important}
+.lite .chips{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.lite article{transition-duration:.3s}
+</style>
+</head>
+<body>
+<div class="hero"><div class="bsm">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div><h1>أُسْوَة</h1><div class="ay">﴿لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ﴾</div><p>أحاديث نبوية صحيحة مختارة</p><div class="w"><span class="pill" id="pl"></span> <span class="pill" id="hd"></span></div><div class="w"><input id="q" type="search" placeholder="ابحث في الأحاديث"></div></div>
+<div class="chips" id="ch"></div>
+<div id="dy"></div><div id="gl"></div><main id="ls"></main>
+<div class="note">اضغط «تحقق من المصدر» لعرض الكتاب والرقم والحكم ورابط الدرر السنية.</div>
+<div class="orn">✦ ❖ ✦</div><div class="note ft">جزاكم الله خيرًا · اللهم اجعله خالصًا لوجهك الكريم<br><a href="#" id="wlr">رسالة من صانع التطبيق</a></div><div id="fab"><button id="fs" aria-label="حجم الخط">Aa</button><button id="tb" aria-label="عداد التسبيح">٠</button><button id="th" aria-label="theme">☾</button><button id="fm" aria-label="menu">✦</button></div><div id="wl" role="dialog" aria-modal="true"><div class="wlc"><div class="wlb">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div><p class="wlt">حاولتُ صناعة تطبيقٍ يساعد المسلمين، ونسأل الله أن يتقبّل منّا، وأن يسدّد خطانا، وأن يجعل هذا المحتوى صدقةً جاريةً بعد الممات.</p><button id="wlb">آمين</button></div></div>
+<div id="ms"><div class="msb"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i><i style="--n:6"></i><i style="--n:7"></i><div class="mst">ما شاء الله</div><div class="mss">بارك الله بك</div></div></div><div id="tt"></div><div id="bk"><div id="sh"></div></div>
+<script>
+const C=["التهليل والتسبيح والحوقلة","الاستغفار","التوحيد والشهادتان","الأذان والصلاة على النبي ﷺ","الصلاة والنوافل","أعمال البر وطلب العلم","الدعاء وسؤال الجنة","الصبر وحفظ الجوارح","فضل القرآن"];
+const D="https://dorar.net";
+const H=[
+{c:0,t:"من قال: لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير، في يوم مائة مرة، كانت له عدل عشر رقاب، وكتبت له مائة حسنة، ومحيت عنه مائة سيئة، وكانت له حرزًا من الشيطان يومه ذلك حتى يمسي، ولم يأت أحد بأفضل مما جاء به إلا أحد عمل أكثر من ذلك.",n:"أبو هريرة",b:"البخاري (3293)، مسلم (2691)",g:"متفق عليه",m:"رواه البخاري ومسلم في صحيحيهما",u:D+"/hadith/sharh/150428"},
+{c:0,t:"من قال: سبحان الله وبحمده، في يوم مائة مرة، حُطّت خطاياه ولو كانت مثل زبد البحر.",n:"أبو هريرة",b:"البخاري (6405)، مسلم (2691)",g:"متفق عليه",m:"رواه البخاري ومسلم في صحيحيهما",u:D+"/hadith/sharh/10616"},
+{c:0,j:1,t:"من قال: سبحان الله العظيم وبحمده، غُرست له نخلة في الجنة.",n:"جابر بن عبد الله",b:"الترمذي (3464)، النسائي في الكبرى (10663)",g:"صحيح",m:"الترمذي: حسن صحيح غريب، والألباني: صحيح (صحيح الترمذي)",u:D+"/hadith/sharh/36290"},
+{c:1,t:"من قال: أستغفر الله الذي لا إله إلا هو الحي القيوم وأتوب إليه، غُفرت ذنوبه، وإن كان قد فرّ من الزحف.",n:"زيد مولى رسول الله ﷺ",b:"أبو داود (1517)، الترمذي (3577)",g:"صحيح لغيره",m:"الأرناؤوط: صحيح لغيره (تخريج سنن أبي داود)، والترمذي: غريب لا نعرفه إلا من هذا الوجه",u:D+"/h/L0RfFw8a"},
+{c:1,j:1,t:"سيد الاستغفار أن تقول: اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك، وأنا على عهدك ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي، وأبوء لك بذنبي، فاغفر لي فإنه لا يغفر الذنوب إلا أنت. ومن قالها من النهار موقنًا بها فمات من يومه قبل أن يمسي فهو من أهل الجنة، ومن قالها من الليل وهو موقن بها فمات قبل أن يصبح فهو من أهل الجنة.",n:"شداد بن أوس",b:"البخاري (6306)",g:"صحيح",m:"رواه البخاري في صحيحه، وهو من أفراده عن مسلم",u:D+"/hadith/sharh/9073"},
+{c:2,j:1,t:"من قال: رضيتُ بالله ربًّا، وبالإسلام دينًا، وبمحمد رسولًا، وجبت له الجنة.",n:"أبو سعيد الخدري",b:"أبو داود (1529)، مسلم (1884) بنحوه، النسائي في الكبرى (9748)",g:"صحيح",m:"الألباني: صحيح (صحيح أبي داود 1529)",u:D+"/h/YtmpTacK"},
+{c:2,j:1,t:"ما منكم من أحد يتوضأ فيسبغ الوضوء، ثم يقول: أشهد أن لا إله إلا الله وحده لا شريك له، وأشهد أن محمدًا عبده ورسوله، إلا فتحت له أبواب الجنة الثمانية، يدخل من أيها شاء.",n:"عمر بن الخطاب",b:"مسلم (234)، أبو داود (169)، النسائي (148)، ابن ماجه (470)، أحمد (121)",g:"صحيح",m:"رواه مسلم في صحيحه. وزيادة «اللهم اجعلني من التوابين واجعلني من المتطهرين» عند الترمذي (55) صححها الألباني وابن باز، وأعلّها الترمذي والبخاري",u:D+"/h/9A4j7VLf"},
+{c:0,t:"يا عبد الله بن قيس، ألا أدلك على كلمة من كنوز الجنة؟ قل: لا حول ولا قوة إلا بالله.",n:"أبو موسى الأشعري",b:"البخاري (6384)، مسلم (2704)، ابن ماجه (3824)",g:"صحيح",m:"رواه البخاري ومسلم، وصححه الألباني (صحيح ابن ماجه 3097)",u:D+"/h/FDUX4kfV"},
+{c:0,t:"كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن: سبحان الله وبحمده، سبحان الله العظيم.",n:"أبو هريرة",b:"مسلم (2694)، البخاري (6682)، وبنحوه البخاري (6406)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/3020"},
+{c:3,t:"من صلى علي واحدة، صلى الله عليه بها عشرًا.",n:"أبو هريرة",b:"مسلم (408)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/26731"},
+{c:3,t:"من قال حين يسمع المؤذن: أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدًا عبده ورسوله، رضيت بالله ربًّا، وبمحمد رسولًا، وبالإسلام دينًا، غُفر له ذنبه.",n:"سعد بن أبي وقاص",b:"مسلم (386)، أبو داود (525)، الترمذي (210)، ابن ماجه (721)",g:"صحيح",m:"رواه مسلم في صحيحه، وصححه الألباني",u:D+"/h/GtnoLpye"},
+{c:3,j:1,t:"إذا قال المؤذن: الله أكبر الله أكبر، فقال أحدكم: الله أكبر الله أكبر، ثم قال: أشهد أن لا إله إلا الله، قال: أشهد أن لا إله إلا الله، ثم قال: أشهد أن محمدًا رسول الله، قال: أشهد أن محمدًا رسول الله، ثم قال: حي على الصلاة، قال: لا حول ولا قوة إلا بالله، ثم قال: حي على الفلاح، قال: لا حول ولا قوة إلا بالله، ثم قال: الله أكبر الله أكبر، قال: الله أكبر الله أكبر، ثم قال: لا إله إلا الله، قال: لا إله إلا الله من قلبه، دخل الجنة.",n:"عمر بن الخطاب",b:"مسلم (385)، أبو داود (527)، النسائي في الكبرى (9785)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/21738"},
+{c:2,j:1,t:"ما من عبد قال: لا إله إلا الله، ثم مات على ذلك، إلا دخل الجنة. قلت: وإن زنى وإن سرق؟ قال: وإن زنى وإن سرق.",n:"أبو ذر الغفاري",b:"البخاري (5827)، مسلم (94)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/h/wPYgTePs"},
+{c:2,j:1,t:"من مات وهو يعلم أنه لا إله إلا الله دخل الجنة.",n:"عثمان بن عفان",b:"مسلم (26)، أحمد (464)، ابن حبان (201)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/26743"},
+{c:4,j:1,t:"من صلى البردين دخل الجنة.",n:"أبو موسى الأشعري",b:"البخاري (574)، مسلم (635)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/23267"},
+{c:4,j:1,t:"ما من عبد مسلم يصلي لله كل يوم ثنتي عشرة ركعة تطوعًا، غير فريضة، إلا بنى الله له بيتًا في الجنة، أو إلا بُني له بيت في الجنة. قالت أم حبيبة: فما برحت أصليهن بعد.",n:"أم حبيبة أم المؤمنين",b:"مسلم (728)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/h/UySKEpkY"},
+{c:5,j:1,t:"من بنى مسجدًا لله، بنى الله له في الجنة مثله.",n:"عثمان بن عفان",b:"مسلم (533)، البخاري (450)، الترمذي (318)، ابن ماجه (736)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/h/oWVRo37F"},
+{c:5,j:1,t:"من سلك طريقًا يلتمس فيه علمًا، سهّل الله له طريقًا إلى الجنة.",n:"أبو هريرة",b:"أحمد (8316)، ومسلم (2699) مطولاً",g:"صحيح",m:"الألباني، صحيح الجامع (6298)",u:D+"/h/KTo2Dd9e?osoul=1"},
+{c:5,j:1,t:"أنا وكافل اليتيم في الجنة هكذا، وأشار بالسبابة والوسطى.",n:"سهل بن سعد الساعدي",b:"البخاري (6005، 5304)، ومسلم (2983) بنحوه",g:"صحيح",m:"الألباني، صحيح الجامع (1475)",u:D+"/hadith/sharh/20969"},
+{c:2,j:1,t:"إن لله تسعة وتسعين اسمًا، مائة إلا واحدًا، من أحصاها دخل الجنة.",n:"أبو هريرة",b:"البخاري (2736)، مسلم (2677)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/3568"},
+{c:4,t:"من توضأ نحو وضوئي هذا، ثم صلى ركعتين لا يحدث فيهما نفسه، غُفر له ما تقدم من ذنبه.",n:"عثمان بن عفان",b:"مسلم (226)، البخاري (159، 1934)، ابن حبان (1060)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/h/kmFDkV1I"},
+{c:4,j:1,t:"من قرأ آية الكرسي دبر كل صلاة مكتوبة لم يمنعه من دخول الجنة إلا أن يموت.",n:"أبو أمامة الباهلي",b:"النسائي في الكبرى (9928)، الطبراني (7532)",g:"ثابت",m:"ابن حبان: صحيح، والهيثمي: أحد أسانيده جيد، وأبو نصر السجزي: حسن، وابن القيم: له أصل، وابن باز: ثابت",u:D+"/hadith/sharh/91642"},
+{c:5,j:1,t:"من عاد مريضًا لم يزل في خرفة الجنة. قيل: يا رسول الله، وما خرفة الجنة؟ قال: جناها.",n:"ثوبان مولى رسول الله ﷺ",b:"مسلم (2568)، الترمذي (967)، ابن حبان (598)، أحمد (22389)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/152166"},
+{c:2,j:1,t:"من مات لا يشرك بالله شيئًا دخل الجنة، ومن مات يشرك بالله شيئًا دخل النار.",n:"جابر بن عبد الله",b:"مسلم (93)، أحمد (14711)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/26732"},
+{c:2,j:1,t:"من كان آخر كلامه لا إله إلا الله دخل الجنة.",n:"معاذ بن جبل",b:"أبو داود (3116)، أحمد (22034)",g:"صحيح",m:"الألباني: صحيح (صحيح أبي داود 3116)",u:D+"/hadith/sharh/28720"},
+{c:6,j:1,t:"من سأل الله الجنة ثلاث مرات قالت الجنة: اللهم أدخله الجنة، ومن استجار من النار ثلاث مرات قالت النار: اللهم أجره من النار.",n:"أنس بن مالك",b:"الترمذي (2572)، النسائي (5521)، ابن ماجه (4340)",g:"صحيح",m:"الألباني، صحيح الترمذي",u:D+"/hadith/sharh/35655"},
+{c:4,j:1,t:"من غدا إلى المسجد وراح، أعد الله له نزله من الجنة كلما غدا أو راح.",n:"أبو هريرة",b:"البخاري (662)، مسلم (669)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/7007"},
+{c:5,t:"من صام يومًا في سبيل الله بعّد الله وجهه عن النار سبعين خريفًا.",n:"أبو سعيد الخدري",b:"البخاري (2840)، مسلم (1153)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/10016"},
+{c:7,j:1,t:"من يضمن لي ما بين لحييه وما بين رجليه أضمن له الجنة.",n:"سهل بن سعد الساعدي",b:"البخاري (6474)، الترمذي (2408)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/13266"},
+{c:7,j:1,t:"ما من الناس من مسلم يُتوفى له ثلاث لم يبلغوا الحنث، إلا أدخله الله الجنة بفضل رحمته إياهم.",n:"أنس بن مالك",b:"البخاري (1248)، النسائي (1873)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/h/WHsBH6jc"},
+{c:0,t:"خير الكلام أربع، لا يضرك بأيهن بدأت: سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر.",n:"أبو هريرة",b:"ابن حبان (836)، مسلم (2695) بنحوه",g:"صحيح",m:"الألباني، صحيح الموارد (1981)",u:D+"/h/SeyEf7pr"},
+{c:4,t:"ركعتا الفجر خير من الدنيا وما فيها.",n:"عائشة أم المؤمنين",b:"مسلم (725)، الترمذي (416)، النسائي (1759)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23552"},
+{c:5,j:1,t:"لا تدخلون الجنة حتى تؤمنوا، ولا تؤمنوا حتى تحابوا، أولا أدلكم على شيء إذا فعلتموه تحاببتم؟ أفشوا السلام بينكم.",n:"أبو هريرة",b:"مسلم (54)، أبو داود (5193)، الترمذي (2688)، ابن ماجه (68)",g:"صحيح",m:"رواه مسلم في صحيحه، وصححه الألباني",u:D+"/hadith/sharh/23595"},
+{c:8,t:"من قرأ بالآيتين من آخر سورة البقرة في ليلة كفتاه.",n:"أبو مسعود البدري",b:"البخاري (5009، 4008)، مسلم (807)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/15066"},
+{c:4,t:"ألا أدلكم على ما يمحو الله به الخطايا ويرفع به الدرجات؟ قالوا: بلى يا رسول الله، قال: إسباغ الوضوء على المكاره، وكثرة الخطا إلى المساجد، وانتظار الصلاة بعد الصلاة، فذلكم الرباط.",n:"أبو هريرة",b:"مسلم (251)، الترمذي (51)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23129"},
+{c:5,t:"المسلم أخو المسلم، لا يظلمه ولا يسلمه، ومن كان في حاجة أخيه كان الله في حاجته، ومن فرّج عن مسلم كربة فرّج الله عنه بها كربة من كرب يوم القيامة، ومن ستر مسلمًا ستره الله يوم القيامة.",n:"عبد الله بن عمر",b:"مسلم (2580)، البخاري (2442)، أبو داود (4893)، ابن حبان (533)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/h/idJ24Sc9"},
+{c:0,t:"الطهور شطر الإيمان، والحمد لله تملأ الميزان، وسبحان الله والحمد لله تملآن — أو تملأ — ما بين السماوات والأرض، والصلاة نور، والصدقة برهان، والصبر ضياء، والقرآن حجة لك أو عليك، كل الناس يغدو فبائع نفسه فمعتقها أو موبقها.",n:"أبو مالك الأشعري",b:"مسلم (223)، الترمذي (3517)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23413"},
+{c:4,t:"من صلى الصبح فهو في ذمة الله، فلا يطلبنكم الله من ذمته بشيء، فيدركه، فيكبه في نار جهنم.",n:"جندب بن عبد الله",b:"مسلم (657)، أحمد (18814)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23391"},
+{c:1,t:"من توضأ فأحسن الوضوء خرجت خطاياه من جسده، حتى تخرج من تحت أظفاره.",n:"عثمان بن عفان",b:"مسلم (245)، أحمد (476)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23543"},
+{c:5,j:1,t:"سدّدوا وقاربوا وأبشروا؛ فإنه لن يدخل الجنة أحدًا عمله، قالوا: ولا أنت يا رسول الله؟ قال: ولا أنا، إلا أن يتغمدني الله منه برحمة، واعلموا أن أحب العمل إلى الله أدومه وإن قل.",n:"عائشة أم المؤمنين",b:"مسلم (2818)، والبخاري (6464، 6467) بنحوه",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/h/maPTtpOF"},
+{c:5,t:"من دل على خير فله مثل أجر فاعله.",n:"أبو مسعود الأنصاري",b:"مسلم (1893)، أبو داود (5129)، الترمذي (2671)",g:"صحيح",m:"رواه مسلم في صحيحه، وصححه الألباني (صحيح أبي داود 5129)",u:D+"/hadith/sharh/152314"},
+{c:5,t:"تبسّمك في وجه أخيك لك صدقة، وأمرك بالمعروف ونهيك عن المنكر صدقة، وإرشادك الرجل في أرض الضلال لك صدقة، وبصرك للرجل الرديء البصر لك صدقة، وإماطتك الحجر والشوك والعظم عن الطريق لك صدقة، وإفراغك من دلوك في دلو أخيك لك صدقة.",n:"أبو ذر الغفاري",b:"الترمذي (1956)، ابن حبان (529)",g:"صحيح",m:"الألباني: صحيح (صحيح الترمذي 1956)، والأرناؤوط: صحيح (تخريج صحيح ابن حبان)",u:D+"/hadith/sharh/35765"},
+{c:1,t:"الصلوات الخمس، والجمعة إلى الجمعة، ورمضان إلى رمضان: مكفّرات ما بينهنّ إذا اجتنب الكبائر.",n:"أبو هريرة",b:"مسلم (233)، الترمذي (214)، ابن ماجه (1086)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23528"},
+{c:5,t:"من شهد الجنازة حتى يُصلّى عليها فله قيراط، ومن شهدها حتى تُدفن فله قيراطان. قيل: وما القيراطان؟ قال: مثل الجبلين العظيمين.",n:"أبو هريرة",b:"مسلم (945)، البخاري (47، 1325)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/h/rYKPNAY2"},
+{c:1,t:"من صام رمضان إيمانًا واحتسابًا، غُفر له ما تقدم من ذنبه.",n:"أبو هريرة",b:"البخاري (38)، مسلم (760)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/2643"},
+{c:5,j:1,t:"إن الصدق يهدي إلى البر، وإن البر يهدي إلى الجنة، وإن الرجل ليصدق حتى يكون صديقًا. وإن الكذب يهدي إلى الفجور، وإن الفجور يهدي إلى النار، وإن الرجل ليكذب حتى يكتب عند الله كذابًا.",n:"عبد الله بن مسعود",b:"البخاري (6094)، مسلم (2607) باختلاف يسير",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/151182"},
+{c:5,j:1,t:"الوالد أوسط أبواب الجنة، فإن شئت فأضع ذلك الباب أو احفظه.",n:"أبو الدرداء",b:"الترمذي (1900)، ابن ماجه (3663)، أحمد (27551)",g:"صحيح",m:"الترمذي: صحيح، والألباني: صحيح",u:D+"/hadith/sharh/65451"},
+{c:5,j:1,t:"رغم أنف، ثم رغم أنف، ثم رغم أنف. قيل: من يا رسول الله؟ قال: من أدرك أبويه عند الكبر، أحدهما أو كليهما، فلم يدخل الجنة.",n:"أبو هريرة",b:"مسلم (2551)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/152076"},
+{c:5,j:1,t:"العمرة إلى العمرة كفارة لما بينهما، والحج المبرور ليس له جزاء إلا الجنة.",n:"أبو هريرة",b:"البخاري (1773)، مسلم (1349)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/2836"},
+{c:5,j:1,t:"إن في الجنة بابًا يقال له: الريان، يدخل منه الصائمون يوم القيامة، لا يدخل منه أحد غيرهم، يقال: أين الصائمون؟ فيقومون، فيدخلون منه، فإذا دخلوا أُغلق، فلم يدخل منه أحد.",n:"سهل بن سعد الساعدي",b:"البخاري (1896)، مسلم (1152)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/21308"},
+{c:5,j:1,t:"من أنفق زوجين في سبيل الله نودي من أبواب الجنة: يا عبد الله، هذا خير؛ فمن كان من أهل الصلاة دُعي من باب الصلاة، ومن كان من أهل الجهاد دُعي من باب الجهاد، ومن كان من أهل الصيام دُعي من باب الريان، ومن كان من أهل الصدقة دُعي من باب الصدقة.",n:"أبو هريرة",b:"البخاري (1897)، مسلم (1027)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/h/ZctSLGE5"},
+{c:4,t:"من حافظ على أربع ركعات قبل الظهر وأربع بعدها حُرِّم على النار.",n:"أم حبيبة أم المؤمنين",b:"أبو داود (1269)، الترمذي (428)، النسائي (1816)",g:"صحيح",m:"الألباني، صحيح أبي داود",u:D+"/hadith/sharh/133806"},
+{c:4,t:"من صلى العشاء في جماعة فكأنما قام نصف الليل، ومن صلى الصبح في جماعة فكأنما صلى الليل كله.",n:"عثمان بن عفان",b:"مسلم (656)، ابن حبان (2060)، أبو داود (555)، الترمذي (221) مختصراً",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/23390"},
+{c:5,t:"إذا مات الإنسان انقطع عنه عمله إلا من ثلاثة: إلا من صدقة جارية، أو علم ينتفع به، أو ولد صالح يدعو له.",n:"أبو هريرة",b:"مسلم (1631)، أبو داود (2880)، النسائي (3651)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/152595"},
+{c:8,t:"اقرؤوا القرآن؛ فإنه يأتي يوم القيامة شفيعًا لأصحابه، اقرؤوا الزهراوين: البقرة وسورة آل عمران؛ فإنهما تأتيان يوم القيامة كأنهما غمامتان أو كأنهما غيايتان أو كأنهما فرقان من طير صواف، تحاجّان عن أصحابهما، اقرؤوا سورة البقرة؛ فإن أخذها بركة، وتركها حسرة، ولا تستطيعها البطلة. قال معاوية: بلغني أن البطلة: السحرة.",n:"أبو أمامة الباهلي",b:"مسلم (804)، أحمد (22213) بنحوه",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري، وصححه الألباني (صحيح الجامع 1165)",u:D+"/hadith/sharh/26869"},
+{c:8,t:"خيركم من تعلّم القرآن وعلّمه.",n:"عثمان بن عفان",b:"البخاري (5027)، أبو داود (1452)، الترمذي (2907)، أحمد (412)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/13180"},
+{c:8,t:"أن رجلًا سمع رجلًا يقرأ: {قل هو الله أحد} يرددها... فقال رسول الله ﷺ: والذي نفسي بيده، إنها لتعدل ثلث القرآن.",n:"أبو سعيد الخدري",b:"البخاري (5013)، أبو داود (1461)",g:"صحيح",m:"رواه البخاري في صحيحه، وهو من أفراده عن مسلم، وصححه الألباني",u:D+"/h/O9iP6yGf"},
+{c:5,t:"اتقوا النار ولو بشق تمرة، فمن لم يجد فبكلمة طيبة.",n:"عدي بن حاتم",b:"مسلم (1016)، البخاري (1413، 6540)، النسائي (2553)، ابن حبان (666)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/h/ao07UnrJ"},
+{c:5,t:"ما نقصت صدقة من مال، وما زاد الله عبدًا بعفو إلا عزًّا، وما تواضع أحد لله إلا رفعه الله.",n:"أبو هريرة",b:"مسلم (2588)، الترمذي (2029)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/64044"},
+{c:1,t:"صيام يوم عرفة، إني أحتسب على الله أن يكفّر السنة التي قبله والسنة التي بعده، وصيام يوم عاشوراء، إني أحتسب على الله أن يكفّر السنة التي قبله.",n:"أبو قتادة الأنصاري",b:"ابن حبان (3632)، مسلم (1162) مطولاً، أبو داود (2425)، الترمذي (749)، ابن ماجه (1730)، أحمد (22650)",g:"صحيح",m:"الأرناؤوط: إسناده صحيح على شرط مسلم، والألباني: صحيح (صحيح الجامع 3853)",u:D+"/h/Yjk7gFh8"},
+{c:7,t:"ما يصيب المؤمن من وصب ولا نصب ولا سقم ولا حزن، حتى الهمّ يهمّه، إلا كُفّر به من سيئاته.",n:"أبو سعيد الخدري وأبو هريرة",b:"مسلم (2573)، البخاري (5641، 5642) بنحوه، الترمذي (966)، أحمد (8027)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/152051"},
+{c:1,t:"إن الله عز وجل يبسط يده بالليل ليتوب مسيء النهار، ويبسط يده بالنهار ليتوب مسيء الليل، حتى تطلع الشمس من مغربها.",n:"أبو موسى الأشعري",b:"مسلم (2759)، أحمد (19619)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/152594"},
+{c:0,t:"ألا أنبئكم بخير أعمالكم وأزكاها عند مليككم وأرفعها في درجاتكم، وخير لكم من إنفاق الذهب والورق، وخير لكم من أن تلقوا عدوكم فتضربوا أعناقهم ويضربوا أعناقكم؟ قالوا: بلى. قال: ذكر الله تعالى.",n:"أبو الدرداء",b:"الترمذي (3377)، ابن ماجه (3790)، أحمد (27525)",g:"صحيح",m:"الألباني، صحيح الترمذي",u:D+"/hadith/sharh/36192"},
+{c:0,t:"مثل الذي يذكر ربه والذي لا يذكر ربه مثل الحي والميت.",n:"أبو موسى الأشعري",b:"البخاري (6407)، مسلم (779)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/10426"},
+{c:0,t:"يقول الله تعالى: أنا عند ظن عبدي بي، وأنا معه إذا ذكرني، فإن ذكرني في نفسه ذكرته في نفسي، وإن ذكرني في ملإ ذكرته في ملإ خير منهم، وإن تقرب إلي بشبر تقربت إليه ذراعًا، وإن تقرب إلي ذراعًا تقربت إليه باعًا، وإن أتاني يمشي أتيته هرولة.",n:"أبو هريرة",b:"البخاري (7405، 7537)، مسلم (2675)، ابن ماجه (3822)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/h/npzLW8hL"},
+{c:7,t:"ليس الشديد بالصرعة، إنما الشديد الذي يملك نفسه عند الغضب.",n:"أبو هريرة",b:"البخاري (6114)، مسلم (2609)، أحمد (7219)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/151201"},
+{c:7,t:"أن رجلًا قال للنبي ﷺ: أوصني، قال: لا تغضب. فردد مرارًا، قال: لا تغضب.",n:"أبو هريرة",b:"البخاري (6116)، والترمذي (2020) بلفظ قريب",g:"صحيح",m:"رواه البخاري في صحيحه، وهو من أفراده عن مسلم",u:D+"/hadith/sharh/151063"},
+{c:5,t:"لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه.",n:"أنس بن مالك",b:"البخاري (13)، مسلم (45) باختلاف يسير، الترمذي (2515)، النسائي (5016)، ابن ماجه (66)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/7324"},
+{c:5,t:"إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى، فمن كانت هجرته إلى الله ورسوله فهجرته إلى الله ورسوله، ومن كانت هجرته إلى دنيا يصيبها أو امرأة ينكحها فهجرته إلى ما هاجر إليه.",n:"عمر بن الخطاب",b:"البخاري (1، 54)، مسلم (1907)، أبو داود (2201)، الترمذي (1647)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/64107"},
+{c:1,t:"من صام رمضان ثم أتبعه ستًّا من شوال كان كصيام الدهر.",n:"أبو أيوب الأنصاري",b:"مسلم (1164)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/20805"},
+{c:4,t:"أفضل الصيام بعد رمضان شهر الله المحرم، وأفضل الصلاة بعد الفريضة صلاة الليل.",n:"أبو هريرة",b:"مسلم (1163)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/21293"},
+{c:7,t:"عجبًا لأمر المؤمن، إن أمره كله خير، وليس ذاك لأحد إلا للمؤمن: إن أصابته سراء شكر فكان خيرًا له، وإن أصابته ضراء صبر فكان خيرًا له.",n:"صهيب بن سنان",b:"مسلم (2999)، أحمد (23930) بنحوه",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/152156"},
+{c:7,t:"إذا مرض العبد أو سافر كُتب له مثل ما كان يعمل مقيمًا صحيحًا.",n:"أبو موسى الأشعري",b:"البخاري (2996)، أبو داود (3091) بنحوه، أحمد (19679)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/4539"},
+{c:1,t:"أرأيتم لو أن نهرًا ببابِ أحدكم يغتسل فيه كل يوم خمسًا، ما تقول ذلك يُبقي من درنه؟ قالوا: لا يبقي من درنه شيئًا، قال: فذلك مثل الصلوات الخمس، يمحو الله به الخطايا.",n:"أبو هريرة",b:"البخاري (528)، مسلم (667) باختلاف يسير، الترمذي (2868)، أحمد (8924)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/22387"},
+{c:4,j:1,t:"خمس صلوات كتبهن الله على العباد، من جاء بهن لم يضيع منهن شيئًا استخفافًا بحقهن، كان له عند الله عهد أن يدخله الجنة، ومن لم يأت بهن فليس له عند الله عهد، إن شاء عذبه وإن شاء أدخله الجنة.",n:"عبادة بن الصامت",b:"أبو داود (425، 1420)، النسائي (461)، ابن ماجه (1401)",g:"صحيح",m:"الألباني، صحيح النسائي",u:D+"/h/TXVLMCDj"},
+{c:5,t:"من حج لله فلم يرفث ولم يفسق، رجع كيوم ولدته أمه.",n:"أبو هريرة",b:"البخاري (1521)، مسلم (1350)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/73883"},
+{c:4,t:"من قام رمضان إيمانًا واحتسابًا، غُفر له ما تقدم من ذنبه.",n:"أبو هريرة",b:"البخاري (37)، مسلم (759)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/1455"},
+{c:4,t:"من يقم ليلة القدر إيمانًا واحتسابًا، غُفر له ما تقدم من ذنبه.",n:"أبو هريرة",b:"البخاري (35)، مسلم (760)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/1432"},
+{c:5,t:"إن الله يقول يوم القيامة: أين المتحابون بجلالي؟ اليوم أظلهم في ظلي يوم لا ظل إلا ظلي.",n:"أبو هريرة",b:"مسلم (2566)، أحمد (8832)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/152107"},
+{c:2,j:1,t:"من آمن بالله وبرسوله، وأقام الصلاة، وصام رمضان؛ كان حقًّا على الله أن يدخله الجنة، جاهد في سبيل الله أو جلس في أرضه التي ولد فيها. فقالوا: يا رسول الله، أفلا نبشر الناس؟ قال: إن في الجنة مئة درجة أعدها الله للمجاهدين في سبيل الله، ما بين الدرجتين كما بين السماء والأرض، فإذا سألتم الله فاسألوه الفردوس؛ فإنه أوسط الجنة وأعلى الجنة، فوقه عرش الرحمن، ومنه تفجر أنهار الجنة.",n:"أبو هريرة",b:"البخاري (2790)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/20931"},
+{c:2,t:"ما من أحد يشهد أن لا إله إلا الله وأن محمدًا رسول الله، صدقًا من قلبه، إلا حرمه الله على النار.",n:"أنس بن مالك",b:"البخاري (128)، مسلم (32)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/7215"},
+{c:2,t:"من شهد أن لا إله إلا الله، وأن محمدًا رسول الله، حرم الله عليه النار.",n:"عبادة بن الصامت",b:"مسلم (29)، أحمد (22711)، ابن حبان (202)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/h/6Avk35AV"},
+{c:2,j:1,t:"من شهد أن لا إله إلا الله مخلصًا من قلبه — أو يقينًا من قلبه — لم يدخل النار — أو دخل الجنة.",n:"معاذ بن جبل",b:"أحمد (22060)، النسائي في الكبرى (10975)، ابن ماجه (3796) بمعناه، ابن حبان (200)",g:"صحيح",m:"الأرناؤوط: صحيح، والألباني: إسناده صحيح على شرط الشيخين",u:D+"/hadith/sharh/149982"},
+{c:2,t:"لن يوافي عبدٌ يوم القيامة يقول: لا إله إلا الله، يبتغي به وجه الله، إلا حرّم الله عليه النار.",n:"عتبان بن مالك",b:"البخاري (6423)، مسلم (33)، أحمد (16482)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/h/N29VFjFL"},
+{c:5,t:"من يرد الله به خيرًا يفقهه في الدين.",n:"معاوية بن أبي سفيان",b:"مسلم (1037)، البخاري (71)، ابن ماجه (221)، أحمد (16837)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/26692"},
+{c:0,t:"إن الله ليرضى عن العبد أن يأكل الأكلة فيحمده عليها، أو يشرب الشربة فيحمده عليها.",n:"أنس بن مالك",b:"مسلم (2734)، الترمذي (1816)، أحمد (12168)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/152585"},
+{c:0,t:"من قال حين يصبح وحين يمسي: سبحان الله وبحمده، مائة مرة، لم يأت أحد يوم القيامة بأفضل مما جاء به، إلا أحد قال مثل ما قال أو زاد عليه.",n:"أبو هريرة",b:"مسلم (2692)، الترمذي (3469)",g:"صحيح",m:"رواه مسلم في صحيحه، وقال الترمذي: حسن صحيح غريب",u:D+"/hadith/sharh/152577"},
+{c:3,t:"من قال حين يسمع النداء: اللهم رب هذه الدعوة التامة والصلاة القائمة، آتِ محمدًا الوسيلة والفضيلة، وابعثه مقامًا محمودًا الذي وعدته؛ حلت له شفاعتي يوم القيامة.",n:"جابر بن عبد الله",b:"البخاري (614)، أبو داود (529)، الترمذي (211)، النسائي (680)، ابن ماجه (722)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/24048"},
+{c:2,j:1,t:"كل أمتي يدخلون الجنة إلا من أبى. قالوا: يا رسول الله، ومن يأبى؟ قال: من أطاعني دخل الجنة، ومن عصاني فقد أبى.",n:"أبو هريرة",b:"البخاري (7280)",g:"صحيح",m:"رواه البخاري في صحيحه",u:D+"/hadith/sharh/63056"},
+{c:2,j:1,t:"دلني على عمل أعمله يدنيني من الجنة ويباعدني من النار. قال: تعبد الله لا تشرك به شيئًا، وتقيم الصلاة، وتؤتي الزكاة، وتصل رحمك. فلما أدبر قال رسول الله ﷺ: إن تمسك بما أمر به دخل الجنة.",n:"أبو أيوب الأنصاري",b:"مسلم (13)، والبخاري (5983) بنحوه",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/h/usBgneug"},
+{c:5,t:"ما من مسلم يغرس غرسًا أو يزرع زرعًا، فيأكل منه طير أو إنسان أو بهيمة، إلا كان له به صدقة.",n:"أنس بن مالك",b:"البخاري (2320)، مسلم (1553)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/5000"},
+{c:5,t:"كل سلامى من الناس عليه صدقة كل يوم تطلع فيه الشمس: تعدل بين الاثنين صدقة، وتعين الرجل في دابته فتحمله عليها أو ترفع له عليها متاعه صدقة، والكلمة الطيبة صدقة، وكل خطوة تمشيها إلى الصلاة صدقة، وتميط الأذى عن الطريق صدقة.",n:"أبو هريرة",b:"البخاري (2989)، مسلم (1009)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/15013"},
+{c:1,t:"كان رجل يداين الناس، فكان يقول لفتاه: إذا أتيت معسرًا فتجاوز عنه، لعل الله أن يتجاوز عنا، فلقي الله فتجاوز عنه.",n:"أبو هريرة",b:"البخاري (3480، 2078)، مسلم (1562)",g:"متفق عليه",m:"اتفق عليه الشيخان",u:D+"/hadith/sharh/114373"},
+{c:1,t:"إن أمتي يُدعون يوم القيامة غرًّا محجّلين من آثار الوضوء.",n:"أبو هريرة",b:"البخاري (136)، مسلم (246)، أحمد (9195)",g:"متفق عليه",m:"رواه البخاري ومسلم. وجملة «فمن استطاع أن يطيل غرته» عدّها الألباني مدرجة من كلام الراوي، فاقتُصر هنا على الجزء المرفوع",u:D+"/hadith/sharh/323"},
+{c:1,t:"إذا توضأ العبد المسلم أو المؤمن، فغسل وجهه خرج من وجهه كل خطيئة نظر إليها بعينيه مع الماء، أو مع آخر قطر الماء، فإذا غسل يديه خرج من يديه كل خطيئة كان بطشتها يداه مع الماء، فإذا غسل رجليه خرجت كل خطيئة مشتها رجلاه مع الماء، حتى يخرج نقيًّا من الذنوب.",n:"أبو هريرة",b:"مسلم (244)، الترمذي (2)، ابن حبان (1040)",g:"صحيح",m:"رواه مسلم في صحيحه، وهو من أفراده عن البخاري",u:D+"/hadith/sharh/37209"},
+{c:7,t:"المؤمن القوي خير وأحب إلى الله من المؤمن الضعيف، وفي كل خير.",n:"أبو هريرة",b:"مسلم (2664)، ابن ماجه (79)، أحمد (8829)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/62791"},
+{c:7,t:"يا عائشة، إن الله رفيق يحب الرفق، ويعطي على الرفق ما لا يعطي على العنف، وما لا يعطي على ما سواه.",n:"عائشة أم المؤمنين",b:"مسلم (2593)، البخاري (6927)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/152138"},
+{c:7,t:"إن الرفق لا يكون في شيء إلا زانه، ولا ينزع من شيء إلا شانه.",n:"عائشة أم المؤمنين",b:"مسلم (2594)، أبو داود (2478)، ابن حبان (550)",g:"صحيح",m:"رواه مسلم في صحيحه",u:D+"/hadith/sharh/152141"},
+{c:7,t:"ما شيء أثقل في ميزان المؤمن يوم القيامة من خلق حسن، فإن الله تعالى ليبغض الفاحش البذيء.",n:"أبو الدرداء",b:"الترمذي (2002)، أبو داود (4799)، أحمد (27517) مختصراً، ابن حبان (5693)",g:"صحيح",m:"الألباني: صحيح (صحيح الترمذي 2002)",u:D+"/hadith/sharh/42702"},
+{c:7,t:"الراحمون يرحمهم الرحمن، ارحموا من في الأرض يرحمكم من في السماء.",n:"عبد الله بن عمرو",b:"الترمذي (1924)، أبو داود (4941)، أحمد (6494)",g:"صحيح",m:"الألباني: صحيح (صحيح الترمذي)، وابن حجر: حسن",u:D+"/hadith/sharh/42672"}
+];
+let cat=-1,fav=[],mem=[],cnt=0,tg=100,fz=0;const nz=s=>s.replace(/[\u064B-\u065F\u0670\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه");
+try{fav=JSON.parse(localStorage.getItem("fv")||"[]")}catch(e){}
+const $=i=>document.getElementById(i);
+function chips(){$("ch").innerHTML=["الكل","دخول الجنة",...C,"المفضلة"].concat(["المحفوظة"]).map((x,i)=>{const k=i==0?-1:i==1?-3:i==C.length+2?-2:i==C.length+3?-4:i-2;return `<button data-k="${k}" class="${cat==k?"on":""}">${x} <small>${ar(kc(k))}</small></button>`}).join("")}
+function draw(nw){
+const k=$("q").value.trim();
+const r=H.map((h,i)=>({...h,i})).filter(h=>(cat==-1||(cat==-2?fav.includes(h.i):cat==-3?h.j:cat==-4?mem.includes(h.i):h.c==cat))).sort((a,b)=>a.c-b.c);
+$("ls").innerHTML=r.length?r.map((h,j)=>`${cat<0&&(j==0||h.c!==r[j-1].c)?`<div class="sep"><i></i><span>${C[h.c]}</span><i></i></div>`:""}<article data-i="${h.i}" style="--d:${j}"><div class="tag${h.j?" j":""}">${h.j?"<i class=\"st\"></i>":""}${C[h.c]} · ${h.g}</div><p class="t">${h.t}</p><div class="m">${h.n} · ${h.b}</div><div class="row"><button class="v" data-v="${h.i}">تحقق من المصدر</button><button data-f="${h.i}" class="${fav.includes(h.i)?"on":""}">${fav.includes(h.i)?"في المفضلة":"أضف للمفضلة"}</button><button data-m="${h.i}" class="${mem.includes(h.i)?"on":""}">${mem.includes(h.i)?"✓ حفظته":"حفظته؟"}</button><button data-s="${h.i}">مشاركة</button></div></article>`).join(""):'<p class="m">لا توجد أحاديث هنا بعد. جرّب قسمًا آخر أو كلمة أخرى.</p>';reveal(nw);filt();
+}
+$("ch").onclick=e=>{const b=e.target.closest("[data-k]");if(b){cat=+b.dataset.k;chips();draw();const o=document.querySelector(".chips .on");o&&o.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"})}};
+$("ls").onclick=e=>{
+const f=e.target.closest("[data-f]"),v=e.target.closest("[data-v]");
+if(f){const i=+f.dataset.f;fav=fav.includes(i)?fav.filter(x=>x!==i):[...fav,i];try{localStorage.setItem("fv",JSON.stringify(fav))}catch(x){}if(cat==-2)draw(1);else{f.classList.toggle("on",fav.includes(i));f.textContent=fav.includes(i)?"في المفضلة":"أضف للمفضلة"}chips()}
+if(v){const h=H[+v.dataset.v];$("sh").innerHTML=`<h2>التحقق من المصدر</h2><dl><dt>الراوي</dt><dd>${h.n}</dd><dt>الكتاب والرقم</dt><dd>${h.b}</dd><dt>الحكم</dt><dd>${h.g} (${h.m})</dd><dt>الموضوع</dt><dd>${C[h.c]}</dd></dl><p class="m" style="margin-top:12px">الأحكام وأرقام التخريج منقولة من الموسوعة الحديثية (الدرر السنية)، وقد يختلف ترقيم بعض الكتب (كمسند أحمد) بين الطبعات.</p><div class="row"><a href="${h.u}" target="_blank" rel="noopener"><button class="v">افتح الحديث في الدرر السنية</button></a><button id="x">إغلاق</button></div>`;$("bk").classList.add("s")}};
+$("bk").onclick=e=>{if(e.target.id=="bk"||e.target.id=="x")closeSh()};
+function toast(m){const t=$("tt");t.textContent=m;t.classList.add("s");clearTimeout(toast.i);toast.i=setTimeout(()=>t.classList.remove("s"),1800)}
+$("ls").addEventListener("click",async e=>{const c=e.target.closest("[data-c]");if(!c)return;const h=H[+c.dataset.c],s=`${h.t}\n— ${h.n}، ${h.b} (${h.g})`;try{if(navigator.share){await navigator.share({text:s});return}await navigator.clipboard.writeText(s);toast("تم نسخ الحديث")}catch(x){if(x.name!="AbortError")toast("تعذّر النسخ")}});
+const sz=()=>document.documentElement.style.setProperty("--fs",(22+fz*3)+"px");
+try{fz=+localStorage.getItem("fz")||0}catch(e){}sz();
+$("fs").onclick=()=>{fz=(fz+1)%4;sz();try{localStorage.setItem("fz",fz)}catch(e){}toast("تم تغيير حجم الخط")};
+$("tb").onclick=()=>{$("sh").innerHTML=`<h2>عدّاد التسبيح</h2><div class="cw"><button id="cb">${ar(cnt)}</button></div><div class="row"><button id="c33">٣٣</button><button id="c100">١٠٠</button><button id="cr">تصفير</button><button id="x">إغلاق</button></div>`;$("bk").classList.add("s")};
+$("sh").addEventListener("click",e=>{const i=e.target.id,b=$("cb");if(i=="cb"){cnt++;b.textContent=ar(cnt);fb2();navigator.vibrate&&navigator.vibrate(12);if(cnt==tg){toast("اكتمل العدد");navigator.vibrate&&navigator.vibrate([60,40,60])}}else if(i=="cr"){cnt=0;b.textContent="٠";fb2()}else if(i=="c33"||i=="c100"){tg=i=="c33"?33:100;cnt=0;b.textContent="٠";fb2();toast("الهدف: "+ar(tg))}});
+const ar=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+$("pl").textContent=ar(H.length)+" حديثًا موثّقًا";
+function fb2(){const t=$("tb");try{t.innerHTML=cnt?`<svg viewBox='0 0 24 24'><text x='12' y='12.6' text-anchor='middle' dominant-baseline='central' font-size='${cnt>99?9:cnt>9?12:15}' font-weight='700' fill='currentColor'>${ar(cnt)}</text></svg>`:ICN.beads}catch(e){}t.style.setProperty("--p",Math.min(100,cnt/tg*100));t.classList.toggle("act",cnt>0)}
+let io;function reveal(nw){$("ls").classList.toggle("nw",!!nw);const a=document.querySelectorAll("article");if(nw){a.forEach(x=>{x.style.transition="none";x.classList.add("in")});return}if(!("IntersectionObserver" in window)){a.forEach(x=>x.classList.add("in"));return}io=io||new IntersectionObserver(es=>es.filter(e=>e.isIntersecting).forEach((e,k)=>{e.target.style.transitionDelay=k*70+"ms";e.target.classList.add("in");io.unobserve(e.target)}),{threshold:.08});a.forEach(x=>io.observe(x))}
+function cp(t){const f=()=>{const a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy");toast("تم النسخ")}catch(e){toast("تعذّر النسخ")}a.remove()};try{navigator.clipboard.writeText(t).then(()=>toast("تم النسخ"),f)}catch(e){f()}}
+let ST="",SL="";
+function openShare(i){const h=H[i];SL=h.u;ST=`${h.t}\n\n— ${h.n}، ${h.b} (${h.g})\n${h.u}`;const q=encodeURIComponent(ST),u=encodeURIComponent(h.u);const L=[["واتساب","#25d366","💬","https://wa.me/?text="+q],["تيليغرام","#229ed9","✈️","https://t.me/share/url?url="+u+"&text="+encodeURIComponent(h.t+"\n— "+h.n+"، "+h.b)],["فيسبوك","#1877f2","f","https://www.facebook.com/sharer/sharer.php?u="+u],["إكس","#111","𝕏","https://twitter.com/intent/tweet?text="+q],["رسالة","#34c759","✉️","sms:?&body="+q],["بريد","#ea4335","📧","mailto:?subject="+encodeURIComponent("حديث نبوي")+"&body="+q]];$("sh").innerHTML=`<h2>مشاركة الحديث</h2><div class="sgrid">${L.map((l,k)=>`<a class="sg" style="--k:${k}" href="${l[3]}" target="_blank" rel="noopener"><i style="background:${l[1]}">${l[2]}</i>${l[0]}</a>`).join("")}<button class="sg" style="--k:6" data-cp="1"><i style="background:var(--acc);color:var(--on)">🔗</i>نسخ الرابط</button><button class="sg" style="--k:7" data-cp="2"><i style="background:var(--gold);color:#3d2a00">📋</i>نسخ النص</button>${navigator.share?`<button class="sg" style="--k:8" data-cp="3"><i style="background:#6b7a99">⤴</i>المزيد</button>`:""}</div><div class="row"><button id="x">إغلاق</button></div>`;$("bk").classList.add("s")}
+$("ls").addEventListener("click",e=>{const s=e.target.closest("[data-s]");if(s)openShare2(+s.dataset.s)});
+$("sh").addEventListener("click",e=>{const c=e.target.closest("[data-cp]");if(!c)return;const k=c.dataset.cp;if(k=="1")cp(SL);else if(k=="2")cp(ST);else if(k=="4")makeImg(CI);else navigator.share({text:ST}).catch(()=>{})});
+const IC={wa:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#25d366'/><path fill='#fff' d='M12 5a7 7 0 0 0-6 10.6L5 19l3.5-.9A7 7 0 1 0 12 5z'/><path fill='#25d366' d='M9.3 8.8c.2-.3.5-.3.7-.3l.5 1.2c0 .2-.1.4-.3.6l-.3.3c.5 1 1.3 1.8 2.4 2.3l.3-.4c.2-.2.4-.2.6-.1l1.1.5c0 .3 0 .6-.3.9-.5.6-1.3.7-2 .4-1.8-.7-3.1-2.1-3.7-3.8-.2-.7 0-1.3.5-1.7z'/></svg>`,tg:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#229ed9'/><path fill='#fff' d='M5.5 11.8l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.6-.5.8-1 .5l-2.8-2.1-1.4 1.3c-.2.2-.3.3-.6.3l.2-2.9 5.3-4.8c.2-.2 0-.3-.3-.1l-6.5 4.1-2.8-.9c-.6-.2-.6-.6.1-.9z'/></svg>`,fb:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#1877f2'/><path fill='#fff' d='M13.2 20v-6.8h2.3l.4-2.7h-2.7V8.8c0-.8.2-1.3 1.3-1.3H16V5.1c-.2 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2H8.3v2.7h2.3V20z'/></svg>`,x:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#000'/><path fill='#fff' d='M6.5 6h3.1l3 4.2L16.2 6h1.6l-4.4 5 4.9 7h-3.1l-3.3-4.7-4.1 4.7H6.3l4.7-5.4z'/></svg>`,sm:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#34c759'/><path fill='#fff' d='M7 7h10a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-6l-3 2.5V16H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z'/><g fill='#34c759'><circle cx='9' cy='11.5' r='1'/><circle cx='12' cy='11.5' r='1'/><circle cx='15' cy='11.5' r='1'/></g></svg>`,ml:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#ea4335'/><rect x='5.5' y='8' width='13' height='8.5' rx='1.5' fill='#fff'/><path d='M5.8 8.6l6.2 4.6 6.2-4.6' fill='none' stroke='#ea4335' stroke-width='1.4'/></svg>`,ln:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#0b5d4b'/><g fill='none' stroke='#fff' stroke-width='1.8' stroke-linecap='round'><path d='M10.5 13.5l3-3'/><path d='M11 8.5l1-1a3 3 0 0 1 4.2 4.2l-1 1'/><path d='M13 15.5l-1 1a3 3 0 0 1-4.2-4.2l1-1'/></g></svg>`,cp:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#a8741a'/><rect x='7.5' y='6.5' width='9' height='11' rx='1.5' fill='none' stroke='#fff' stroke-width='1.5'/><path d='M10 6.5V5.5h4v1M9.5 10.5h5M9.5 13h5' stroke='#fff' stroke-width='1.3' fill='none'/></svg>`,mr:`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#6b7a99'/><path d='M12 15V6M8.5 9.5L12 6l3.5 3.5M7 13v4h10v-4' fill='none' stroke='#fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>`};
+function openShare2(i){CI=i;const h=H[i];SL=h.u;ST=`${h.t}\n\n— ${h.n}، ${h.b} (${h.g})\n${h.u}`;const q=encodeURIComponent(ST),u=encodeURIComponent(h.u);const L=[["واتساب","wa","https://wa.me/?text="+q],["تيليغرام","tg","https://t.me/share/url?url="+u+"&text="+encodeURIComponent(h.t+"\n— "+h.n+"، "+h.b)],["فيسبوك","fb","https://www.facebook.com/sharer/sharer.php?u="+u],["إكس","x","https://twitter.com/intent/tweet?text="+q],["رسالة","sm","sms:?&body="+q],["بريد","ml","mailto:?subject="+encodeURIComponent("حديث نبوي")+"&body="+q]];const B=[["نسخ الرابط","ln","1"],["نسخ النص","cp","2"]];B.push(["صورة","im","4"]);if(navigator.share)B.push(["المزيد","mr","3"]);$("sh").innerHTML=`<h2>مشاركة الحديث</h2><div class="sgrid">${L.map((l,k)=>`<a class="sg" style="--k:${k}" href="${l[2]}" target="_blank" rel="noopener"><i>${IC[l[1]]}</i>${l[0]}</a>`).join("")}${B.map((l,k)=>`<button class="sg" style="--k:${k+6}" data-cp="${l[2]}"><i>${IC[l[1]]}</i>${l[0]}</button>`).join("")}</div><div class="row"><button id="x">إغلاق</button></div>`;$("bk").classList.add("s")}
+try{mem=JSON.parse(localStorage.getItem("mm")||"[]")}catch(e){}
+function pill(){$("pl").textContent=ar(H.length)+" حديثًا موثّقًا"+(mem.length?" · "+ar(mem.length)+" محفوظ":"")}
+pill();
+try{$("hd").textContent=new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura",{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date())}catch(e){$("hd").remove()}
+const dj=H.map((h,i)=>i).filter(i=>H[i].j&&H[i].t.length<260),di=dj[Math.floor(Date.now()/864e5)%dj.length],dh=H[di];
+$("dy").innerHTML=`<div class="dy"><div class="dl">✦ حديث اليوم</div><p class="dt">${dh.t}</p><div class="m">${dh.n} · ${dh.b}</div><div class="row"><button data-s="${di}">مشاركة</button></div></div>`;
+$("dy").onclick=e=>{const s=e.target.closest("[data-s]");if(s)openShare2(+s.dataset.s)};
+$("ls").addEventListener("click",e=>{const m=e.target.closest("[data-m]");if(!m)return;const i=+m.dataset.m;mem=mem.includes(i)?mem.filter(x=>x!==i):[...mem,i];if(mem.includes(i))mt[i]=Date.now();else delete mt[i];try{localStorage.setItem("mm",JSON.stringify(mem));localStorage.setItem("mt",JSON.stringify(mt))}catch(x){}pill();goal();if(cat==-4)draw(1);else{m.classList.toggle("on",mem.includes(i));m.textContent=mem.includes(i)?"✓ حفظته":"حفظته؟"}chips();if(mem.includes(i))celebrate()});
+try{const t=localStorage.getItem("th");if(t){document.documentElement.dataset.theme=t;thI()}}catch(e){}
+$("th").onclick=()=>{const r=document.documentElement,d=(r.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))=="dark";r.dataset.theme=d?"light":"dark";thI();try{localStorage.setItem("th",r.dataset.theme)}catch(e){}};
+const LT=`<svg viewBox='0 0 40 90'><path d='M20 0v14' stroke='#e9c46a' stroke-width='1.5'/><path d='M11 19h18l-3-5H14z' fill='#e9c46a'/><path d='M10 21h20l3 20-5 18H12L7 41z' fill='rgba(233,196,106,.16)' stroke='#e9c46a' stroke-width='1.5'/><ellipse class='glow' cx='20' cy='40' rx='5.5' ry='10' fill='#ffd36b'/><path d='M13 62h14l-2 6H15z' fill='#e9c46a'/><path d='M20 68v7' stroke='#e9c46a' stroke-width='1.5'/><circle cx='20' cy='79' r='3' fill='#e9c46a'/></svg>`;
+void(`<svg class='mh' viewBox='0 0 200 110' fill='none' stroke='#e9c46a'><path d='M18 110V52Q18 22 100 4Q182 22 182 52V110' stroke-width='1.6'/><path d='M32 110V54Q32 30 100 16Q168 30 168 54V110' stroke-width='.9'/></svg><span class='ln l1'>${LT}</span><span class='ln l2'>${LT}</span><svg class='kh' viewBox='0 0 40 40'><path d='M20 2l5 11 11-5-5 11 11 5-11 5 5 11-11-5-5 11-5-11-11 5 5-11-11-5 11-5-5-11 11 5z' fill='#e9c46a' stroke='#fff3c4'/></svg>`);
+document.body.insertAdjacentHTML("beforeend","<div id='sp'></div>");
+addEventListener("scroll",()=>{const d=document.documentElement;$("sp").style.width=Math.min(100,scrollY/Math.max(1,d.scrollHeight-innerHeight)*100)+"%"},{passive:true});
+function celebrate(){const m=$("ms");m.classList.add("s");navigator.vibrate&&navigator.vibrate([30,40,30]);clearTimeout(celebrate.t);celebrate.t=setTimeout(()=>m.classList.remove("s"),2000)}
+const rt=()=>document.querySelectorAll("article.tl").forEach(a=>{a.classList.remove("tl");a.style.setProperty("--rx","0deg");a.style.setProperty("--ry","0deg")});
+$("ls").addEventListener("pointerdown",e=>{if(e.target.closest("button,a"))return;const a=e.target.closest("article");if(!a)return;const r=a.getBoundingClientRect();a.classList.add("tl");a.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*8+"deg");a.style.setProperty("--rx",-((e.clientY-r.top)/r.height-.5)*8+"deg")});
+addEventListener("pointerup",rt);addEventListener("pointercancel",rt);
+const kc=k=>H.filter((h,i)=>k==-1||(k==-2?fav.includes(i):k==-3?h.j:k==-4?mem.includes(i):h.c==k)).length;
+$("fm").onclick=()=>{const o=$("fab").classList.toggle("o");$("fm").innerHTML=o?ICN.x:ICN.st};
+fb2();
+let CI=0,mt={},wg=3;try{mt=JSON.parse(localStorage.getItem("mt")||"{}");wg=+localStorage.getItem("wg")||3}catch(e){}
+IC.im=`<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#7b4bb7'/><rect x='6' y='7' width='12' height='10' rx='1.8' fill='none' stroke='#fff' stroke-width='1.5'/><circle cx='10' cy='10.5' r='1.3' fill='#fff'/><path d='M7 16l3.5-3.5 2.5 2.5 2-2 2.5 3' fill='none' stroke='#fff' stroke-width='1.4' stroke-linejoin='round'/></svg>`;
+async function makeImg(i){const h=H[i],W=1080,c=document.createElement("canvas");c.width=W;c.height=1350;const x=c.getContext("2d");try{await document.fonts.load("44px Amiri")}catch(e){}const g=x.createLinearGradient(0,0,W,1350);g.addColorStop(0,"#0b5d4b");g.addColorStop(1,"#0a2e27");x.fillStyle=g;x.fillRect(0,0,W,1350);x.strokeStyle="#e9c46a";x.lineWidth=5;x.strokeRect(40,40,W-80,1270);x.lineWidth=2;x.strokeRect(62,62,W-124,1226);x.direction="rtl";x.textAlign="center";x.fillStyle="#e9c46a";x.font="46px Amiri";x.fillText("بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",W/2,150);const fs=h.t.length>260?28:h.t.length>150?34:42,lh=fs*2.1;x.font=fs+"px Amiri";x.fillStyle="#fff3d6";const ws=h.t.split(" "),L=[];let l="";for(const w of ws){const t=l?l+" "+w:w;if(x.measureText(t).width>W-240&&l){L.push(l);l=w}else l=t}L.push(l);const y0=Math.max(300,(1350-L.length*lh)/2-40);L.forEach((s,k)=>x.fillText(s,W/2,y0+k*lh));x.fillStyle="#e9c46a";x.font="34px Amiri";x.fillText(h.n+" · "+h.b,W/2,y0+L.length*lh+50);x.font="30px Amiri";x.fillText(h.g+" · الدرر السنية",W/2,y0+L.length*lh+100);x.font="28px Amiri";x.fillText("✦  أُسْوَة  ✦",W/2,1240);c.toBlob(async b=>{const f=new File([b],"hadith.png",{type:"image/png"});try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){if(e.name=="AbortError")return}$("sh").innerHTML=`<h2>صورة الحديث</h2><p class="m">اضغط مطولًا على الصورة لحفظها أو مشاركتها</p><img src="${c.toDataURL("image/png")}" style="width:100%;border-radius:14px;border:2px solid var(--g2)"><div class="row"><button id="x">إغلاق</button></div>`;$("bk").classList.add("s")})}
+function goal(){const n=mem.filter(i=>mt[i]&&Date.now()-mt[i]<6048e5).length,p=Math.min(100,n/wg*100);$("gl").innerHTML=`<div class="gl"><div class="gh"><span>🎯 هدف الأسبوع</span><button id="gb">${ar(wg)} أحاديث</button></div><div class="gbar"><i style="width:${p}%"></i></div><div class="m">${n>=wg?"🎉 أتممت هدفك، بارك الله فيك":"حفظت "+ar(n)+" من "+ar(wg)+" هذا الأسبوع"}</div><div class="m">${streakTxt()}</div><div class="row"><button id="qz">اختبر حفظك</button></div></div>`}
+function quiz(){const pool=mem.length?mem:H.map((h,i)=>i),i=pool[Math.floor(Math.random()*pool.length)],h=H[i],ws=h.t.split(" "),k=Math.max(3,Math.ceil(ws.length/3));$("sh").innerHTML=`<h2>اختبر حفظك</h2><p class="dt">${ws.slice(0,k).join(" ")} …</p><div id="qa" style="display:none"><p class="dt">${ws.slice(k).join(" ")}</p><div class="m">${h.n} · ${h.b}</div></div><div class="row"><button class="v" id="qs">أظهر التكملة</button><button id="qn" style="display:none">حديث آخر</button><button id="x">إغلاق</button></div>`;$("bk").classList.add("s")}
+goal();
+$("gl").onclick=e=>{if(e.target.id=="gb"){const a=[1,3,5,7];wg=a[(a.indexOf(wg)+1)%4]||3;try{localStorage.setItem("wg",wg)}catch(x){}goal()}else if(e.target.id=="qz")quiz()};
+$("sh").addEventListener("click",e=>{const i=e.target.id;if(i=="qs"){$("qa").style.display="block";$("qs").style.display="none";$("qn").style.display="inline-block"}else if(i=="qn")quiz()});
+const ICN={st:`<svg viewBox='0 0 24 24'><path fill='currentColor' d='M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6z'/></svg>`,x:`<svg viewBox='0 0 24 24'><path d='M6 6l12 12M18 6L6 18' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round'/></svg>`,sun:`<svg viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round'><circle cx='12' cy='12' r='4'/><path d='M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6'/></g></svg>`,moon:`<svg viewBox='0 0 24 24'><path fill='currentColor' d='M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z'/></svg>`,up:`<svg viewBox='0 0 24 24'><path d='M12 19V6M6 11.5l6-6 6 6' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>`};
+function thI(){const r=document.documentElement,d=(r.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))=="dark";$("th").innerHTML=d?ICN.sun:ICN.moon}
+$("fm").innerHTML=ICN.st;thI();
+$("fm").insertAdjacentHTML("beforebegin","<button id='up' aria-label='top'>"+ICN.up+"</button>");
+$("up").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+ICN.aa=`<svg viewBox='0 0 24 24'><g transform='translate(.4 -.25)' fill='none' stroke='currentColor' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'><path d='M3.5 18L7.5 6.5L11.5 18M5.2 14h4.6'/><circle cx='17' cy='14.3' r='2.7'/><path d='M19.7 11.6V18'/></g></svg>`;
+ICN.beads=`<svg viewBox='0 0 24 24'><g fill='currentColor'><circle cx='12' cy='4.3' r='1.3'/><circle cx='15.8' cy='5.5' r='1.3'/><circle cx='18.2' cy='8.8' r='1.3'/><circle cx='18.2' cy='12.8' r='1.3'/><circle cx='15.8' cy='16.1' r='1.3'/><circle cx='12' cy='17.3' r='1.3'/><circle cx='8.2' cy='16.1' r='1.3'/><circle cx='5.8' cy='12.8' r='1.3'/><circle cx='5.8' cy='8.8' r='1.3'/><circle cx='8.2' cy='5.5' r='1.3'/><circle cx='12' cy='20' r='1.5'/></g><path d='M12 18.6v.8' stroke='currentColor' stroke-width='1.2'/></svg>`;
+$("fs").innerHTML=ICN.aa;fb2();
+function closeSh(){const b=$("bk");if(!b.classList.contains("s")||b.classList.contains("c"))return;b.classList.add("c");setTimeout(()=>b.classList.remove("s","c"),270)}
+let ty=0;const shEl=$("sh");
+shEl.addEventListener("touchstart",e=>{ty=e.touches[0].clientY},{passive:true});
+shEl.addEventListener("touchmove",e=>{const d=e.touches[0].clientY-ty;if(d>0&&shEl.scrollTop==0){e.preventDefault();shEl.style.transform="translateY("+d+"px)"}},{passive:false});
+$("bk").addEventListener("touchmove",e=>{if(e.target===$("bk"))e.preventDefault()},{passive:false});
+const lk=()=>document.documentElement.classList.toggle("lock",["bk","wl"].some(id=>$(id).classList.contains("s")));
+["bk","wl"].forEach(id=>new MutationObserver(lk).observe($(id),{attributes:true,attributeFilter:["class"]}));
+shEl.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientY-ty;shEl.style.transform="";if(d>110&&shEl.scrollTop==0)closeSh()});
+var sk={d:0,n:0};try{sk=JSON.parse(localStorage.getItem("sk")||"{}")}catch(e){}
+{const d=Math.floor(Date.now()/864e5);if(sk.d!==d){sk.n=sk.d===d-1?(sk.n||0)+1:1;sk.d=d;try{localStorage.setItem("sk",JSON.stringify(sk))}catch(e){}}}
+function streakTxt(){return "ورد متواصل: "+ar((typeof sk!="undefined"&&sk&&sk.n)||1)+" يوم"}
+goal();
+const NZ=H.map(h=>nz(h.t+h.n+h.b));
+function filt(){const k=nz($("q").value.trim()),L=$("ls");let vis=0,sep=null,sv=0;for(const el of Array.from(L.children)){if(el.classList.contains("sep")){if(sep)sep.classList.toggle("hd",!sv);sep=el;sv=0}else if(el.tagName=="ARTICLE"){const ok=!k||NZ[el.dataset.i].includes(k);el.classList.toggle("hd",!ok);if(ok){vis++;sv++}}}if(sep)sep.classList.toggle("hd",!sv);let m=$("em");if(!m){m=document.createElement("p");m.id="em";m.className="m";m.textContent="لا توجد أحاديث مطابقة. جرّب كلمة أخرى.";L.appendChild(m)}m.style.display=vis||!L.querySelector("article")?"none":"block"}
+const qEl=$("q");qEl.addEventListener("focus",()=>document.body.classList.add("kb"));qEl.addEventListener("blur",()=>{kbT=Date.now()-800});
+let lastRz=0,bh=innerHeight;const kbChk=()=>{lastRz=Date.now();const h=window.visualViewport?visualViewport.height:innerHeight;bh=Math.max(bh,innerHeight,h);if(h<bh*.8){document.body.classList.add("kb");kbT=Date.now()}};
+addEventListener("resize",kbChk);if(window.visualViewport)visualViewport.addEventListener("resize",kbChk);
+document.addEventListener("pointerdown",e=>{if(e.target!==qEl&&document.activeElement===qEl)qEl.blur()});
+try{const lo=(navigator.deviceMemory&&navigator.deviceMemory<=2)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=3);if(lo)document.documentElement.classList.add("lite")}catch(e){}
+let kbT=0;
+const kbOn=()=>{document.body.classList.add("kb");kbT=Date.now()};
+qEl.addEventListener("pointerdown",kbOn);qEl.addEventListener("touchstart",kbOn,{passive:true});qEl.addEventListener("focus",kbOn);
+qEl.addEventListener("keydown",e=>{if(e.key=="Enter"||e.key=="Escape")qEl.blur()});
+addEventListener("scroll",()=>{if(document.activeElement===qEl&&Date.now()-kbT>800)qEl.blur()},{passive:true});
+setInterval(()=>{const b=document.body.classList;if(!b.contains("kb"))return;const h=window.visualViewport?visualViewport.height:innerHeight;if((document.activeElement!==qEl||(h>=bh*.8&&Date.now()-kbT>700))&&Date.now()-lastRz>240){b.remove("kb");b.add("kbf");setTimeout(()=>b.remove("kbf"),340)}},100);
+let qt;$("q").oninput=()=>{clearTimeout(qt);qt=setTimeout(filt,70)};
+function wlShow(){$("wl").classList.add("s")}
+function wlHide(){const w=$("wl");w.classList.add("c");setTimeout(()=>w.classList.remove("s","c"),360);try{localStorage.setItem("wl","1")}catch(e){}}
+$("wlb").onclick=wlHide;
+if($("wlr"))$("wlr").onclick=e=>{e.preventDefault();wlShow()};
+let wlSeen=false;try{wlSeen=localStorage.getItem("wl")=="1"}catch(e){}
+if(!wlSeen)wlShow();
+chips();draw();
+</script>
+</body>
+</html>
